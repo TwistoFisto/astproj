@@ -12,6 +12,6 @@ The purpose of this project is to showcase how much damage you can potentially g
 3. Be able to calculate a burst line's low point, high roll and average potencies and true dmg values.
 
 From this point we'll need to use FFLOGs data to feed it information for it to process the following functions:
-4. 2 Minute sequencing - we want to figure how the best sequence to card people and the chance of drawing that specific sequence; as well as showcasing other similar sequence incase of RNG.
-5. Astrodyne vs perfect card role draw - a case if 6% on optimal card target vs 6% secondary target + 5% self under Div
-6. Potential Redraws - it should be able to figure out if a redraw would have been the play or not, regardless of the outcome, it should forecast what you stand to gain or lose.
+1. 2 Minute sequencing - we want to figure how the best sequence to card people and the chance of drawing that specific sequence; as well as showcasing other similar sequence incase of RNG.
+2. Astrodyne vs perfect card role draw - a case if 6% on optimal card target vs 6% secondary target + 5% self under Div
+3. Potential Redraws - it should be able to figure out if a redraw would have been the play or not, regardless of the outcome, it should forecast what you stand to gain or lose.

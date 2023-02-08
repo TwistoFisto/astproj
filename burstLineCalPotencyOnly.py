@@ -33,6 +33,7 @@ burstline = []
 GCD_Count  = math.floor(GCD_Count)
 oGCD_weave_count = 0
 
+
 #WE'RE GOING TO NEED TO ADD CAST TIMES COLUMN SO WE KNOW IF IT'S: NO WEAVE, SINGLE WEAVE ONLY OR FREE DOUBLE WEAVE
 for i in range(GCD_Count):
     print("debug mesg")
@@ -87,7 +88,7 @@ for i in range(GCD_Count):
             
     print("debug1",burstline)
 
-
+"""
 SAM1 = SAM.query("Movename == 'midare setsugekka'")
 print(SAM1.to_string())
 
@@ -97,6 +98,7 @@ input = input("Give me a movename: ")
 SAM2 = SAM.loc[SAM["Movename"] == input]
 SAM2_POTENCY_VAL = SAM2.iloc[0,3]
 print(SAM2_POTENCY_VAL)
+"""
 
 
 """

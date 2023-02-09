@@ -1,47 +1,46 @@
-Class,Name,Buff,Type,Notes
-ALL,Crit,150%,DMG,depends on crit stat
-ALL,Dhit,125%,DMG,static
-ALL TANKS,Tank Mastery,80%,DMG,Applied First?
-ALL CASTERS + HEALERS,Maim and Mend,130%,DMG,Casters + healers
-ALL PHY RANGED,Increased Action DMG,120%,DMG,Phy Ranged only
-ALL,Pots,108%,DMG,30s
-SAM,Shifu,113%,HASTE,self
-SAM,Jinpu,113%,DMG,upkeep buff
-NIN,Huton,115%,HASTE,self
-NIN,Trick Attack,110%,DMG,self burst
-NIN,Mug,105%,DMG,raidbuff
-DRG,Battle Litany,110%,CRIT,crit rate raidbuff
-DRG,Dragonsight Self,110%,DMG,self buff
-DRG,Dragonsight Partner,105%,DMG,partner
-DRG,Disembowl,110%,DMG,upkeep buff
-DRG,Lance Charge,110%,DMG,self burst
-MNK,Disciplined Fists,115%,DMG,upkeep buff
-MNK,Greased Lightning,120%,HASTE,trait
-MNK,Riddle of Fire,115%,DMG,self burst
-MNK,Riddle of Wind,150%,HASTE,autoattacks only
-MNK,Brotherhood,105%,DMG,raidbuff
-RPR,Shadow of Death,110%,DMG,upkeep buff
-RPR,Arcane Circle,103%,DMG,raidbuff
-BRD,Raging Strikes,115%,DMG,self buff
-BRD,Battle Voice,120%,DHIT,dhit rate raidbuff
-BRD,Mages Ballad,101%,DMG,raid buff
-BRD,Wanderers Minuet,102%,CRIT,crit rate raidbuff
-BRD,Armys Paeon,103%,DHIT,dhit rate raidbuff
-BRD,Radiant Finale,106%,DMG,raid buff
-DNC,Dance Partner,105%,DMG,both self + DP
-DNC,Technical Finish,105%,DMG,raidbuff
-DNC,Devilment,120%,CDH,crit+dhit buff for self + DP
-BLM,Enochian,121%,DMG,upkeep buff
-BLM,Aspect of Fire 3,180%,DMG,fire mode
-BLM,Leylines,115%,HASTE,speedy cast
-SMN,Searing Light,103%,DMG,30s raid buff
-RDM,Embolden,105%,DMG,"raid buff, doesn't buff self physical attacks"
-RDM,Manafication,105%,DMG,self burst - magic GCDs only
-PLD,Fight or Flight,125%,DMG,self buff
-WAR,Storms Eye,110%,DMG,upkeep buff
-DRK,Darkside,110%,DMG,upkeep buff
-GNB,No Mercy,120%,DMG,self burst
-SCH,Chain Stratagem,110%,DMG,crit rate raidbuff
-AST,Divination,106%,DMG,raid buff
-AST,Astrodyne: Mind,105%,DMG,self buff
-AST,Astrodyne: Body,110%,HASTE,self haste buff
+Class,Name,Buff,Type
+ALL,Crit,150%+,DMG
+ALL,Dhit,125%,DMG
+ALL TANKS,Tank Mastery,80%,DMG
+ALL CASTERS + HEALERS,Maim and Mend,130%,DMG
+ALL PHY RANGED,Increased Action DMG,120%,DMG
+ALL,Pots,108%,DMG
+SAM,Shifu,113%,HASTE
+SAM,Jinpu,113%,DMG
+NIN,Huton,115%,HASTE
+NIN,Trick Attack,110%,DMG
+NIN,Mug,105%,DMG
+DRG,Battle Litany,110%,CRIT
+DRG,Dragonsight Self,110%,DMG
+DRG,Dragonsight Partner,105%,DMG
+DRG,Disembowl,110%,DMG
+DRG,Lance Charge,110%,DMG
+MNK,Disciplined Fists,115%,DMG
+MNK,Greased Lightning,120%,HASTE
+MNK,Riddle of Fire,115%,DMG
+MNK,Riddle of Wind,150%,HASTE
+MNK,Brotherhood,105%,DMG
+RPR,Shadow of Death,110%,DMG
+RPR,Arcane Circle,103%,DMG
+BRD,Raging Strikes,115%,DMG
+BRD,Battle Voice,120%,DHIT
+BRD,Mage's Ballad,101%,DMG
+BRD,Wanderer's Minuet,102%,CRIT
+BRD,Army's Paeon,103%,DHIT
+BRD,Radiant Finale,106%,DMG
+DNC,Dance Partner,105%,DMG
+DNC,Technical Finish,105%,DMG
+DNC,Devilment,120%,CDH
+BLM,Enochian,121%,DMG
+BLM,Aspect of Fire 3,180%,DMG
+SMN,Searing Light,103%,DMG
+RDM,Embolden,105%,DMG
+RDM,Manafication,105%,DMG
+PLD,Fight or Flight,125%,DMG
+WAR,Storm's Eye,110%,DMG
+DRK,Darkside,110%,DMG
+GNB,No Mercy,120%,DMG
+SCH,Chain Stratagem,110%,DMG
+AST,Divination,106%,DMG
+AST,Astrodyne: Mind,105%,DMG
+AST,Astrodyne: Body,110%,HASTE

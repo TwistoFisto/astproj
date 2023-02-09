@@ -1,0 +1,46 @@
+Class	Name	Buff	Type
+ALL	Crit	150%+	DMG
+ALL	Dhit	125%	DMG
+ALL TANKS	Tank Mastery	80%	DMG
+ALL CASTERS + HEALERS	Maim and Mend	130%	DMG
+ALL PHY RANGED	Increased Action DMG	120%	DMG
+ALL	Pots	108%	DMG
+SAM	Shifu	113%	HASTE
+SAM	Jinpu	113%	DMG
+NIN	Huton	115%	HASTE
+NIN	Trick Attack	110%	DMG
+NIN	Mug	105%	DMG
+DRG	Battle Litany	110%	CRIT
+DRG	Dragonsight Self	110%	DMG
+DRG	Dragonsight Partner	105%	DMG
+DRG	Disembowl	110%	DMG
+DRG	Lance Charge	110%	DMG
+MNK	Disciplined Fists	115%	DMG
+MNK	Greased Lightning	120%	HASTE
+MNK	Riddle of Fire	115%	DMG
+MNK	Riddle of Wind	150%	HASTE
+MNK	Brotherhood	105%	DMG
+RPR	Shadow of Death	110%	DMG
+RPR	Arcane Circle	103%	DMG
+BRD	Raging Strikes	115%	DMG
+BRD	Battle Voice	120%	DHIT
+BRD	Mage's Ballad	101%	DMG
+BRD	Wanderer's Minuet	102%	CRIT
+BRD	Army's Paeon	103%	DHIT
+BRD	Radiant Finale	106%	DMG
+DNC	Dance Partner	105%	DMG
+DNC	Technical Finish	105%	DMG
+DNC	Devilment	120%	CDH
+BLM	Enochian	121%	DMG
+BLM	Aspect of Fire 3	180%	DMG
+SMN	Searing Light	103%	DMG
+RDM	Embolden	105%	DMG
+RDM	Manafication	105%	DMG
+PLD	Fight or Flight	125%	DMG
+WAR	Storm's Eye	110%	DMG
+DRK	Darkside	110%	DMG
+GNB	No Mercy	120%	DMG
+SCH	Chain Stratagem	110%	DMG
+AST	Divination	106%	DMG
+AST	Astrodyne: Mind	105%	DMG
+AST	Astrodyne: Body	110%	HASTE

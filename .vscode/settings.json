@@ -1,0 +1,7 @@
+{
+    "gitlens.advanced.blame.customArguments": [
+
+    ],
+    "git.ignoreLimitWarning": true,
+    "git.postCommitCommand": "sync"
+}

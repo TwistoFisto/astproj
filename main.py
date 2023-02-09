@@ -37,7 +37,7 @@ baseDamage = math.floor(math.floor(math.floor(100 * atk * WeaponDamage) * (1 + D
 avgDamage = math.floor(baseDamage * (1 + (CritD - 1) * CritC) * (1 + Dh * 0.25))
 critDamage = math.floor(baseDamage * CritD)
 
-print(baseDamage, avgDamage, critDamage)
+print(baseDamage, avgDamage, critDamage, Speed)
 
 
 

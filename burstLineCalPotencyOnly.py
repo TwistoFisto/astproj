@@ -148,8 +148,11 @@ elif job == "BRD":
     pass
 
 elif job == "MCH":
+    MCHBuff = traitBuffList.query("Class == 'ALL PHY RANGED'")
     pass
+
 elif job == "DNC":
+    
     pass
 elif job == "BLM":
     pass

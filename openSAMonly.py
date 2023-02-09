@@ -105,4 +105,3 @@ print(SAM2_POTENCY_VAL)
 
 
 print(SAM2.to_string())
-

@@ -152,8 +152,13 @@ elif job == "MCH":
     pass
 
 elif job == "DNC":
-    
+    DNCBuffList = traitBuffList.query("Class == @job | Class == 'ALL PHY RANGED'")
+    Increased_Action_DMG2 = DNCBuffList.query("Name == 'Increased Action DMG'").iloc[0,2]
+    Dance_Partner = DNCBuffList.query("Name == 'Dance Partner'").iloc[0,2]
+    Technical_Finish = DNCBuffList.query("Name == 'Technical Finish'").iloc[0,2]
+    Devilment = DNCBuffList.query("Name == 'Devilment'").iloc[0,2]
     pass
+
 elif job == "BLM":
     pass
 elif job == "SMN":

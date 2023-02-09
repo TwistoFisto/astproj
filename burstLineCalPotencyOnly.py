@@ -148,7 +148,8 @@ elif job == "BRD":
     pass
 
 elif job == "MCH":
-    MCHBuff = traitBuffList.query("Class == 'ALL PHY RANGED'")
+    MCHBuff = traitBuffList.query("Class == 'ALL PHY RANGED'").iloc[0,2]
+    
     pass
 
 elif job == "DNC":
@@ -160,24 +161,65 @@ elif job == "DNC":
     pass
 
 elif job == "BLM":
+    BLMBuffList = traitBuffList.query("Class == @job | Class == 'ALL CASTERS + HEALERS'")
+    Casterbuff = BLMBuffList.query("Name == Maim and Mend").iloc[0,2]
+    Enochian = BLMBuffList.query("Name == 'Enochian'").iloc[0,2]
+    Fire_Aspect = BLMBuffList.query("Name == 'Aspect of Fire 3'").iloc[0,2]
+    Leylines = BLMBuffList.query("Name == 'Leylines'").iloc[0,2]
     pass
+
 elif job == "SMN":
+    SMNBuffList = traitBuffList.query("Class == @job | Class = 'ALL CASTERS + HEALERS'")
+    Casterbuff = SMNBuffList.query("Name == 'Maim and Mend'").iloc[0,2]
+    Searing_Light = SMNBuffList.query("Name == 'Searing Light'").iloc[0,2]
     pass
+
 elif job == "RDM":
+    RDMBuffList = traitBuffList.query("Class == @job | Class = 'ALL CASTERS + HEALERS'")
+    Embolden = RDMBuffList.query("Name == 'Embolden'").iloc[0,2]
+    Manafication = RDMBuffList.query("Name == 'Manafication'").iloc[0,2]
     pass
+
 elif job == "WAR":
+    WARBuffList = traitBuffList.query("Class = @job | Class = 'ALL TANKS'")
+    Tank_Mastery = WARBuffList.query("Name == 'Tank Mastery'").iloc[0,2]
+    Storms_Eye = WARBuffList.query("Name == 'Storms Eye'").iloc[0,2]
     pass
+
 elif job == "PLD":
+    PLDBuffList = traitBuffList.query("Class == @job | Class = 'ALL TANKS'")
+    Tank_Mastery = PLDBuffList.query("Name == 'Tank Mastery'").iloc[0,2]
+    Fight_or_Flight = PLDBuffList.query("Name == 'Fight or Flight'")
     pass
+
 elif job == "DRK":
+    DRKBuffList = traitBuffList.query("Class == @job | Class = 'ALL TANKS'")
+    Tank_Mastery = DRKBuffList.query("Name == 'Tank Mastery'").iloc[0,2]
+    Darkside = DRKBuffList.query("Name == 'Darkside'").iloc[0,2]
     pass
+
 elif job == "GNB":
+    GNBBuffList = traitBuffList.query("Class == @job | Class = 'ALL TANKS'")
+    Tank_Mastery = GNBBuffList.query("Name == 'Tank Mastery'").iloc[0,2]
+    No_Mercy = GNBBuffList.query("Name == 'No Mercy'").iloc[0,2]
     pass
+
 elif job == "SGE":
+    SGEBuff = traitBuffList.query("Class == 'Tank Mastery'").iloc[0,2]
     pass
+
 elif job == "SCH":
+    SCHBuffList = traitBuffList.query("Class == @job | Class == 'ALL CASTERS + HEALERS'")
+    Casterbuff = SCHBuffList.query("Name == 'Maim and Mend'").iloc[0,2]
+    Chain_Stratagem = SCHBuffList.query("Name == 'Chain Stratagem'").iloc[0,2]
     pass
+
 elif job == "AST":
+    ASTBuffList = traitBuffList.query("Class == @job | Class == 'ALL CASTERS + HEALERS'")
+    Casterbuff = ASTBuffList.query("Name == 'Maim and Mend'").iloc[0,2]
+    Divination = ASTBuffList.query("Name == 'Divination'").iloc[0,2]
+    Astrodyne_Mind = ASTBuffList.query("Name == 'Astrodyne: Mind'").iloc[0,2]
+    Astrodyne_Body = ASTBuffList.query("Name == 'Astrodyne: Body'").iloc[0,2]
     pass
 
 """

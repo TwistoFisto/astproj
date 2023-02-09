@@ -33,6 +33,7 @@ DNC,Technical Finish,105%,DMG,raidbuff
 DNC,Devilment,120%,CDH,crit+dhit buff for self + DP
 BLM,Enochian,121%,DMG,upkeep buff
 BLM,Aspect of Fire 3,180%,DMG,fire mode
+BLM,Leylines,115%,HASTE,speedy cast
 SMN,Searing Light,103%,DMG,30s raid buff
 RDM,Embolden,105%,DMG,"raid buff, doesn't buff self physical attacks"
 RDM,Manafication,105%,DMG,self burst - magic GCDs only

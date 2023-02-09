@@ -7,7 +7,7 @@ lvlModifier_Div = 1900
 lvlModifier_Main = 390
 
 print("Please input your stats")
-job = "BRD"#input("Class: ")
+job = "AST"#input("Class: ")
 crit = 2000#int(input("Crit:"))
 dhit = 1500#int(input("Direct Hit:"))
 speed = 1473 #int(input("Skill Speed/Spellspeed:"))
@@ -149,7 +149,6 @@ elif job == "BRD":
 
 elif job == "MCH":
     MCHBuff = traitBuffList.query("Class == 'ALL PHY RANGED'").iloc[0,2]
-    
     pass
 
 elif job == "DNC":
@@ -221,6 +220,8 @@ elif job == "AST":
     Astrodyne_Mind = ASTBuffList.query("Name == 'Astrodyne: Mind'").iloc[0,2]
     Astrodyne_Body = ASTBuffList.query("Name == 'Astrodyne: Body'").iloc[0,2]
     pass
+
+
 
 """
 match job:

@@ -88,11 +88,20 @@ inflated.
 With slow GCD speeds we don't need to account for the extra malefic. But we will want to account for it across the course of a fight at some point.
 
 
-### ._.
+### If FFXIV was a simple game,
 
-With the gains from Astrodyne in mind.
+So with the gains from Astrodyne in mind.
 
 To calculate if it's worth to complete the 3rd seal:
 
 AstrodyneGain + 6% Secondary vs 6% Primary
 
+However, that would make 2.34 the defacto build we want always no matter what our gear options are.
+
+This fortunately is not the case
+
+Crit/Dhit are factors we need to account for, even if they're inherently RNG by nature.
+
+Comparing on average crit change to our astrodyneGains then compare that to average crit chances of our card targets. Now gains before more relative.
+
+To be honest, I'm not sure how to showcase this.

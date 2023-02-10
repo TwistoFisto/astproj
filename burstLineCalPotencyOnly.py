@@ -38,7 +38,7 @@ burstline = []
 GCD_Count  = math.floor(GCD_Count)
 oGCD_weave_count = 0
 
-"""
+
 #WE'RE GOING TO NEED TO ADD CAST TIMES COLUMN SO WE KNOW IF IT'S: NO WEAVE, SINGLE WEAVE ONLY OR FREE DOUBLE WEAVE
 for i in range(GCD_Count):
     print("debug mesg")
@@ -91,7 +91,7 @@ for i in range(GCD_Count):
                 burstline.append(ability_name3)
                 pass
             
-    print("debug1",burstline)"""
+    print("debug1",burstline)
 
 
 #Getting baseline potency including buffs - also my python wasn't updated so we're nesting fucking if statements yippee:
@@ -254,8 +254,11 @@ SAM2 = SAM.loc[SAM["Movename"] == input]
 SAM2_POTENCY_VAL = SAM2.iloc[0,3]
 print(SAM2_POTENCY_VAL)
 """
-
-
+#using burstline as a basis to get values from the class' moveset.
+modified_potencies = []
+for i in burstline:
+    base_potency = job
+    
 """
 modified_potencies = pd.DataFrame([], columns=["modified_potency"])
 modified_potency = 0

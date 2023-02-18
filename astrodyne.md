@@ -1,5 +1,5 @@
 # Astrodyne
-Astrodyne is another factor we should worry about, a situation can occur when you saw a perfect role card, but not the correct seal.
+Astrodyne is another factor we should worry about, a situation can occur when you draw a perfect role card, but not the correct seal.
 
 A choice will be between completing seals or buffing preferred class.
 

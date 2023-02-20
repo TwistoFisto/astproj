@@ -138,7 +138,7 @@ So we're comparing:
 Either one can be optimal depending on who we are carding at those points.
 
 ## **How do we calculate Astrodyne Gain?**
-
+___
 With 2 seal astrodynes, it's merely a matter of gaining a malefic or not. This is however, sps dependent.
 
 Crit focused builds will have around 7 malefics under astrodyne buff and most of them needed to be 2nd slot woven
@@ -199,4 +199,4 @@ Crit/Dhit are factors we need to account for, even if they're inherently RNG by 
 
 Comparing on average crit change to our astrodyneGains then compare that to average crit chances of our card targets. Now gains before more relative.
 
-To be honest, I'm not sure how to showcase this.
+To be honest, I'm not sure how to showcase this, at least for now.

@@ -1,0 +1,5 @@
+#Astrodyne?
+
+gcdspeed = 2.41
+gcdspeed_hasted = gcdspeed-gcdspeed*0.9
+print(gcdspeed_hasted)

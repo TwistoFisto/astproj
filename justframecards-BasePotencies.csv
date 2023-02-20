@@ -1,4 +1,4 @@
-Class,Move name,Type,Base P,Recast,Crit,DHit,Pet,2nd P
+Class,Movename,Type,Base P,Recast,Crit,DHit,Pet,2nd P
 SAM,Autoattack,AA,79.2,2.64,,,,
 SAM,Hakaze,GCD,200,2.5,,,,
 SAM,Shifu,GCD,280,2.5,,,,

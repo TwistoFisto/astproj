@@ -94,8 +94,7 @@ for i in range(GCD_Count):
     print("debug1",burstline)
 
 
-#Getting baseline potency including buffs - also my python wasn't updated so we're nesting fucking if statements yippee:
-
+#Getting baseline potency including buffs - also my python wasn't updated so we're nesting fucking if statements yandere dev moment KEKW
 if job == "SAM":
     SAMBuffList = traitBuffList.query("Class == @job")
     Jinpu = SAMBuffList.query("Name == 'Jinpu'").iloc[0,2]
@@ -255,7 +254,10 @@ SAM2_POTENCY_VAL = SAM2.iloc[0,3]
 print(SAM2_POTENCY_VAL)
 """
 #using burstline as a basis to get values from the class' moveset.
+#modified potencies will act as a new container for the moveset's potencies.
+#truedmg list does the same thing as modified potencies, but instead of potencies it computes true baseline dmg values.
 modified_potencies = []
+true_dmg = []
 for i in burstline:
     base_potency = job
     

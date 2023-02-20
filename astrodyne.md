@@ -1,5 +1,43 @@
-# Astrodyne
-Astrodyne is another factor we should worry about, a situation can occur when you saw a perfect role card, but not the correct seal.
+# Astrodyne and You
+Astrodyne is another factor we should worry about, a situation can occur when you saw a perfect role card, but not the correct seal. A choice will be potentially between completing seals with a suboptimal role card or buffing preferred class with unperfect astrodyne seals as of 6.2 you cannot "Clutch Redraw" which is when you Redraw a card that completes a perfect seal but suboptimal role card in an attempt to get both. While we can meme on AST aDPS contributions etc... one Astrodyne on it's own does not meaningfully contribute to your dmg, a collection of do.
+<br/><br/>
+## It's purpose?
+The purpose of Astrodyne's existence is twofold: it's primary purpose is to add RNG as part of our class identity with randomly drawn card buffs(although all cards serve the same purpose) - this is based off the ShB system as the seals were introduced to prime your Divination. However getting 3 seals Divination were so important that people will wipe if the AST cannot get 3 seal Divs on time on top of getting decent card RNG - which is pretty much the same failure state of SB/HW AST of not being able to Draw balances for AoE buffs. The second purpose is to allievate RNG from affecting our rDPS, they changed it to only affecting our aDPS potential. Whether this was a good choice or not, it's out of this document and project scope.
+
+We're here to play the hand we're dealt with of course.
+<br/><br/>
+## Why is this important?
+Both your cards and astrodyne buffs are at very meagre gains. Meaning gaining and losing are done frequently and easily, without much of a thought. Astrodyne buffs do matter, depending on your card RNG as mentioned before. And as said before, gains are minimal when it comes to AST, but that's looking at an individual, singular instance. Within a general savage encounter, it'll between 3-5 Astrodynes and 12 and 20 cards roughly. In an ultimate, much, much, more....
+
+https://xivanalysis.com/fflogs/Tadw12m8ChA7K9PN/257/76
+
+Using this card line as an example. For context this is a Rank 1 p8s doorboos kill in 6.2
+
+The AST is a good player. However in this run the AST loss 2k~ potency from card/astrodyne in terms of modified potencies.
+
+https://docs.google.com/spreadsheets/d/e/2PACX-1vSazZyycsabL8TGFIPaQmxWijMOhvj274yKO4vQMwtjjt45iLPPxiQ8KrQWZ8LjKupicxgikXvycBu0/pubhtml?gid=89646110&single=true
+
+This is mostly an approximation so the swing can be a little higher or lower.
+
+
+However as said before in justframecards, there are different priorities that you can operate under, each has it's specific strength and context they're often used.
+<br/><br/>
+
+**Highroll:**
+
+Everything is under the assumption of criting, we're taking mostly the account for absolute highend of dmg variance. Classes that already have built-in forced crits/dhits will be naturally lower on the ceiling because their potencies were balanced around criting/dhitting. WAR and MCH are the best examples to showcase this, IR fell cleaves, Inner Chaos, Reassembled Drill/Air Anchor/Chainsaw, etc... The major downside to this is the absurd luck required to get runs like this, and even so this kind of routing only applies to speedkills/log optimisations because your primarily fishing for god runs, both for yourself and the party. How this interacts with Astrodyne is almost disregarding the potential seal bonuses and only fishing for perfect seals and role cards.
+<br/><br/>
+
+**Average Rolling**
+
+Your playing what you see. Burstlines are averaged out with their crit/dhit stat accounted for, not just the dmg increase but it's potential frequency. While not perfect since it's still inherently RNG, you can with some confidence predict how much a class will burst for through averages. Typically this should be your go to method as it can be applied pretty much anywhere. In prog settings, basic farms, etc... you get the idea. 
+<br/><br/>
+
+**Baseline**
+
+Your playing for absolute minimum, never accounting for random crit chance. This is normally used on raidtiers with low crit substat gear, start of expac or generally parties with little crit stat. While to get a generate flatline of a burst's pure modified potencies/dmg. It will make classes with forced crit/dhit look better because their "modified potency" will look bigger as a result of their forced crit properties.
+This does not occur very often. So you can kindly disregard this.
+<br/><br/>
 
 
 

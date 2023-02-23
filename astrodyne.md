@@ -119,13 +119,9 @@ When burst power is similar, or within range of each other - you can essentially
 
 ## 2nd vs 1st Slot Weaving
 ___
-We usually want to 2nd slot weave our Astrodyne so that we get 7 GCDs or 8 if we're 2.34 recast. (This won't be a thing if Astrodyne operate from stacks instead of flat duration)
+We usually want to 2nd slot weave our Astrodyne so that we get 7 GCDs or 8 if we're 2.34s recast. (This won't be a thing if Astrodyne operate from stacks instead of flat duration)
 
-However some 2 minute windows it "may" not be possible.
-
-This occurs on any 2 minute window where we need to use Astrodyne inbetween card plays to prevent ourselves from overcapping.
-
-The problem here then becomes, is it worth delay a card play to get the optimal last GCD?
+However some 2 minute windows it "may" not be possible. This occurs on any 2 minute window where we need to use Astrodyne inbetween card plays to prevent ourselves from overcapping.The problem here then becomes, is it worth delay a card play to get the optimal last GCD?
 
 Delay gives you an extra 5% from malefic if it's perfect seal Astrodyne. But having just Haste will usually mean your 0.24~ slower from the norm.
 
@@ -133,7 +129,7 @@ If this results in a malefic cast being loss then it's a 250p loss. A straight 2
 
 So we're comparing:
 
-**Delayed Play Burst + 2nd slot Astrodyne  VS 1st slot Astrodyne + Fast Play Burst**
+**Delayed Play Burst + 2nd slot Astrodyne VS 1st slot Astrodyne + Fast Play Burst**
 
 Either one can be optimal depending on who we are carding at those points.
 

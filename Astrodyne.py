@@ -5,6 +5,7 @@ import math
 
 #currently a prototype file, it'll need to be organised into functions, afterwards so it works with the main file.
 
+
 #these variables can be shifted so it's user inputed.
 #gcdspeed = 2.41
 gcdspeed = 2.5

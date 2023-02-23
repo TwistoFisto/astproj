@@ -183,9 +183,9 @@ TotalBuffedGCDTotalBasePotencyE = ((float(malefic_base) * GCD_Count_Early) + (lo
 TotalBuffedGcdTotalModifiedPotencyE = ((modified_malefic * GCD_Count_Early) + (modified_lordOfCrown * 2) + (modified_earthlyStar))* 0.05
 
 
-TotalBuffedGCDTotalTrueDamageE = (((((avgDamage/100) * float(malefic_base)) * GCD_Count_2ndSlot)) + ((avgDamage/100) * (lordOfCrowns_base * 2)) + ((avgDamage/100) * earthlyStar_base * 0.9)) * 0.05
-TotalBuffedGCDTotalBasePotencyE = ((float(malefic_base) * GCD_Count_2ndSlot) + (lordOfCrowns_base) + (earthlyStar_base)) * 0.05
-TotalBuffedGcdTotalModifiedPotencyE = ((modified_malefic * GCD_Count_2ndSlot) + (modified_lordOfCrown * 2) + (modified_earthlyStar))* 0.05
+TotalBuffedGCDTotalTrueDamageL = (((((avgDamage/100) * float(malefic_base)) * GCD_Count_2ndSlot)) + ((avgDamage/100) * (lordOfCrowns_base * 2)) + ((avgDamage/100) * earthlyStar_base * 0.9)) * 0.05
+TotalBuffedGCDTotalBasePotencyL = ((float(malefic_base) * GCD_Count_2ndSlot) + (lordOfCrowns_base) + (earthlyStar_base)) * 0.05
+TotalBuffedGcdTotalModifiedPotencyL = ((modified_malefic * GCD_Count_2ndSlot) + (modified_lordOfCrown * 2) + (modified_earthlyStar))* 0.05
 
 print()
 print("Total Astrodyne dmg buff contribution Early Weave")
@@ -195,9 +195,9 @@ print("Average Damage increase =", TotalBuffedGCDTotalTrueDamageE)
 
 print()
 print("Late weave:")
-print("Base Potency increase =", TotalBuffedGCDTotalBasePotencyE)
-print("Modified Potency increase =",TotalBuffedGcdTotalModifiedPotencyE)
-print("Average Damage increase =", TotalBuffedGCDTotalTrueDamageE)
+print("Base Potency increase =", TotalBuffedGCDTotalBasePotencyL)
+print("Modified Potency increase =",TotalBuffedGcdTotalModifiedPotencyL)
+print("Average Damage increase =", TotalBuffedGCDTotalTrueDamageL)
 
 
 

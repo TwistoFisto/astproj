@@ -1,5 +1,5 @@
 Class,Name,Buff,Type
-ALL,Crit,150%+,DMG
+ALL,Crit,150%,DMG
 ALL,Dhit,125%,DMG
 ALL TANKS,Tank Mastery,80%,DMG
 ALL CASTERS + HEALERS,Maim and Mend,130%,DMG

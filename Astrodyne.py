@@ -4,7 +4,7 @@ import pandas as pd
 import math
 
 #currently a prototype file, it'll need to be organised into functions, afterwards so it works with the main file.
-
+#This file's existence is because we want to know how much gain from Astrodyne, the possible extra GCD and the 5% buff as well.
 
 #these variables can be shifted so it's user inputed.
 #gcdspeed = 2.41

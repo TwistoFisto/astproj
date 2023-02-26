@@ -2,12 +2,15 @@ from random import triangular
 import pandas as pd
 import math
 
+#another prototype, this is proving that we can take an "array" of dmg GCDs/oGCDs and convert them to various potencies, from base, to trait modified to 
+#including various self buffs and then have that be distingushed on a per GCD/oGCD basis. (This part hasn't been implemented yet)
+
 lvlModifier_Sub = 400
 lvlModifier_Div = 1900
 lvlModifier_Main = 390
 
 print("Please input your stats")
-job = "AST"#input("Class: ")
+job = "SAM"#input("Class: ")
 crit = 2000#int(input("Crit:"))
 dhit = 1500#int(input("Direct Hit:"))
 speed = 1473 #int(input("Skill Speed/Spellspeed:"))
@@ -24,82 +27,31 @@ a = len(job_moves.index)
 print(a)
 print(job_moves.to_string())
 
-speed = math.floor(130 * (speed - lvlModifier_Sub) / lvlModifier_Div) / 1000
-GCD = 2.5-(2.5*speed)
-#GCD = (2500-2500*speed)/1000
-print(GCD)
-player = [job, crit, dhit, speed, GCD]
+jobmodpd = pd.read_csv('JobModifiers.csv')
+jobget = jobmodpd.query("Class == @job")
+jobmod = jobget.iloc[0,1]
+print(jobmod)
+jobmod = float(jobmod)
 
-GCD_Count = 15/GCD
-print(GCD_Count)
+jobtype = jobget.iloc[0,2]
 
-print("Create a burst line: ")
-burstline = []
-GCD_Count  = math.floor(GCD_Count)
-oGCD_weave_count = 0
-
-
-#WE'RE GOING TO NEED TO ADD CAST TIMES COLUMN SO WE KNOW IF IT'S: NO WEAVE, SINGLE WEAVE ONLY OR FREE DOUBLE WEAVE
-for i in range(GCD_Count):
-    print("debug mesg")
-    ability_name = input("GCD/oGCD: ")
-    ability_name = ability_name.lower()
-    
-    #Now we search for the move in the class specific segment:
-    #ability_from_dataframe = job_moves.query("Movename == @ability_name").loc
-    ability_from_dataframe = job_moves.loc[job_moves["Movename"] == ability_name]
-    print(ability_from_dataframe)
-
-    #This is supposed to get the potency/type of the move based off the ability name within the class specific segment.
-    get_ability_potency = ability_from_dataframe.iloc[0,3]
-    get_ability_type = ability_from_dataframe.iloc[0,2]
-    print("debug2",get_ability_potency, get_ability_type)
-    if get_ability_type == "GCD":
-        burstline.append(ability_name)
-        pass
-    else:
-        burstline.append(ability_name)
-
-        ability_name2 = input("GCD/oGCD: ")
-        ability_name2 = ability_name2.lower()
-        ability_from_dataframe2 = job_moves.loc[job_moves["Movename"] == ability_name2]
-        print(ability_from_dataframe2)
-        get_ability_potency2 = ability_from_dataframe2.iloc[0,3]
-        get_ability_type2 = ability_from_dataframe2.iloc[0,2]
-        print("debug2",get_ability_potency2, get_ability_type2)
-
-        if get_ability_type2 == "GCD":
-            ++i
-            burstline.append(ability_name2)
-            pass
-        else:
-            burstline.append(ability_name2)
-
-            ability_name3 = input("GCD/oGCD: ")
-            ability_name3 = ability_name3.lower()
-            ability_from_dataframe3 = job_moves.loc[job_moves["Movename"] == ability_name3]
-            print(ability_from_dataframe3)
-            get_ability_potency3 = ability_from_dataframe3.iloc[0,3]
-            get_ability_type3 = ability_from_dataframe3.iloc[0,2]
-            print("debug2",get_ability_potency3, get_ability_type3)
-
-            if get_ability_type3 == "GCD":
-                ++i
-                burstline.append(ability_name3)
-                pass
-            else:
-                burstline.append(ability_name3)
-                pass
-            
-    print("debug1",burstline)
-
+#using jobtype to determine what trait modifiers to use.
+if jobtype == "CASTER":
+    trait_modifier = 1.3
+elif jobtype == "PHYR":
+    trait_modifier = 1.2
+elif jobtype == "TANK":
+    trait_modifier = 0.8
+else:
+    trait_modifier = 1.0
 
 #Getting baseline potency including buffs - also my python wasn't updated so we're nesting fucking if statements yandere dev moment KEKW
 if job == "SAM":
     SAMBuffList = traitBuffList.query("Class == @job")
     Jinpu = SAMBuffList.query("Name == 'Jinpu'").iloc[0,2]
     print("Jinpu", Jinpu)
-    Shifu = SAMBuffList.query("Name == 'Shifu'").iloc[0,2]  
+    Shifu = SAMBuffList.query("Name == 'Shifu'").iloc[0,2]
+    
     pass
 
 elif job == "NIN":
@@ -221,6 +173,88 @@ elif job == "AST":
     pass
 
 
+#It'll need a checker for it the class in question has any haste modifiers like MNK greese lightning, SAM's shifu, etc...
+#it'll then need to do a separate calculation to account for that
+speed = math.floor(130 * (speed - lvlModifier_Sub) / lvlModifier_Div) / 1000
+GCD = 2.5-(2.5*speed)
+#GCD = (2500-2500*speed)/1000
+print("GCD recast:", GCD)
+player = [job, crit, dhit, speed, GCD]
+
+GCD_Count = 15/GCD
+print("GCD Count:",GCD_Count)
+
+print("Create a burst line: ")
+burstline = []
+burstline_base_potency = []
+GCD_Count  = math.floor(GCD_Count)
+oGCD_weave_count = 0
+
+
+#WE'RE GOING TO NEED TO ADD CAST TIMES COLUMN SO WE KNOW IF IT'S: NO WEAVE, SINGLE WEAVE ONLY OR FREE DOUBLE WEAVE
+for i in range(GCD_Count):
+    print("debug mesg")
+    ability_name = input("GCD/oGCD: ")
+    ability_name = ability_name.lower()
+    
+    #Now we search for the move in the class specific segment:
+    #ability_from_dataframe = job_moves.query("Movename == @ability_name").loc
+    ability_from_dataframe = job_moves.loc[job_moves["Movename"] == ability_name]
+    print(ability_from_dataframe)
+
+    #This is supposed to get the potency/type of the move based off the ability name within the class specific segment.
+    get_ability_potency = ability_from_dataframe.iloc[0,3]
+    get_ability_type = ability_from_dataframe.iloc[0,2]
+    print("debug2",get_ability_potency, get_ability_type)
+    if get_ability_type == "GCD":
+        burstline.append(ability_name)
+        burstline_base_potency.append(float(get_ability_potency))
+
+        pass
+    else:
+        burstline.append(ability_name)
+
+        ability_name2 = input("GCD/oGCD: ")
+        ability_name2 = ability_name2.lower()
+        ability_from_dataframe2 = job_moves.loc[job_moves["Movename"] == ability_name2]
+        print(ability_from_dataframe2)
+        get_ability_potency2 = ability_from_dataframe2.iloc[0,3]
+        get_ability_type2 = ability_from_dataframe2.iloc[0,2]
+        print("debug2",get_ability_potency2, get_ability_type2)
+
+        if get_ability_type2 == "GCD":
+            ++i
+            burstline.append(ability_name2)
+            burstline_base_potency.append(float(get_ability_potency2))
+            pass
+        else:
+            burstline.append(ability_name2)
+            burstline_base_potency.append(float(get_ability_potency2))
+
+            ability_name3 = input("GCD/oGCD: ")
+            ability_name3 = ability_name3.lower()
+            ability_from_dataframe3 = job_moves.loc[job_moves["Movename"] == ability_name3]
+            print(ability_from_dataframe3)
+            get_ability_potency3 = ability_from_dataframe3.iloc[0,3]
+            get_ability_type3 = ability_from_dataframe3.iloc[0,2]
+            print("debug2",get_ability_potency3, get_ability_type3)
+
+            if get_ability_type3 == "GCD":
+                ++i
+                burstline.append(ability_name3)
+                burstline_base_potency.append(float(get_ability_potency3))
+                pass
+            else:
+                burstline.append(ability_name3)
+                burstline_base_potency.append(float(get_ability_potency3))
+                pass
+            
+    print("debug1",burstline)
+    print("debug", burstline_base_potency)
+
+
+
+
 
 """
 match job:
@@ -256,11 +290,26 @@ print(SAM2_POTENCY_VAL)
 #using burstline as a basis to get values from the class' moveset.
 #modified potencies will act as a new container for the moveset's potencies.
 #truedmg list does the same thing as modified potencies, but instead of potencies it computes true baseline dmg values.
-modified_potencies = []
+total_base_potency = sum(burstline_base_potency)
+print(total_base_potency)
+
+trait_modified_potencies = total_base_potency * trait_modifier
+print(trait_modified_potencies)
+
+trait_modified_potenciesArray = []
+for i in burstline_base_potency:
+    trait_modified_potenciesArray.append(i * trait_modifier)
+
+print(trait_modified_potenciesArray)
+
+buff_modified_potencies = []
 true_dmg = []
-for i in burstline:
-    base_potency = job
-    
+#This for loop is gonna iterate per dmg instance. It'll need information whether or not the GCD or ability was buffed. For example We can take NIN
+#as an example. It'll
+for i in trait_modified_potenciesArray:
+    print("Trait:", )
+    pass
+
 """
 modified_potencies = pd.DataFrame([], columns=["modified_potency"])
 modified_potency = 0

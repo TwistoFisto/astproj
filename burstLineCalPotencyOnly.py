@@ -5,6 +5,11 @@ import math
 #another prototype, this is proving that we can take an "array" of dmg GCDs/oGCDs and convert them to various potencies, from base, to trait modified to 
 #including various self buffs and then have that be distingushed on a per GCD/oGCD basis. (This part hasn't been implemented yet)
 
+#One of the main edge cases which is annoying me are GCDs and oGCDs that is outside of a specific buff while being under card buff, a good example would be an early NIN card where you catch a GCD before Trick 
+#has even been applied, or better yet, early card NIN where you catch Phantom Kama under Mug's buff but not Trick Attack. This prototype will have to iterate for GCD, oGCD, autoattacks and pet actions if it's 
+#under their own stat steroid. Under a commandline interface, this is extremely slow as you'll have to ask the user to input a true or false statement for every single iteration of dmg in a burst profile.
+#I'll need something that will create a buff timeline, and a rotation timeline, and then check if a dmg instance is outside of said buff or not, then lastly calculate final potency + true dmg values.
+    #tl;dr I need something thatwill automatically update values synonomously as the user place stuff within and outside of their buff.
 lvlModifier_Sub = 400
 lvlModifier_Div = 1900
 lvlModifier_Main = 390
@@ -13,8 +18,8 @@ print("Please input your stats")
 job = "SAM"#input("Class: ")
 crit = 2000#int(input("Crit:"))
 dhit = 1500#int(input("Direct Hit:"))
-speed = 1473 #int(input("Skill Speed/Spellspeed:"))
-
+speed = 508 #int(input("Skill Speed/Spellspeed:"))
+#1473
 movenamelist = pd.read_csv('justframecards-BasePotencies.csv')
 movenamelist["Movename"] = movenamelist["Movename"].str.lower()
 
@@ -35,7 +40,8 @@ jobmod = float(jobmod)
 
 jobtype = jobget.iloc[0,2]
 
-#using jobtype to determine what trait modifiers to use.
+#using jobtype to determine what trait modifiers to use, healers are classified as casters
+#and then use trait modifiers to calculate both modified potencies + true damage values.
 if jobtype == "CASTER":
     trait_modifier = 1.3
 elif jobtype == "PHYR":
@@ -46,12 +52,15 @@ else:
     trait_modifier = 1.0
 
 #Getting baseline potency including buffs - also my python wasn't updated so we're nesting fucking if statements yandere dev moment KEKW
+#it'll need to draw out buff type and also duration so we'll know what to attach to the modified GCD or not.
 if job == "SAM":
     SAMBuffList = traitBuffList.query("Class == @job")
-    Jinpu = SAMBuffList.query("Name == 'Jinpu'").iloc[0,2]
+    #not the best solution, find another.
+    Jinpu = [SAMBuffList.query("Name == 'Jinpu'").iloc[0,2],SAMBuffList.query("Name == 'Jinpu'").iloc[0,3]]
     print("Jinpu", Jinpu)
-    Shifu = SAMBuffList.query("Name == 'Shifu'").iloc[0,2]
-    
+    Shifu = [SAMBuffList.query("Name == 'Shifu'").iloc[0,2],SAMBuffList.query("Name == 'Shifu'").iloc[0,3]]
+    buffs = [Jinpu, Shifu]
+    print(buffs)
     pass
 
 elif job == "NIN":
@@ -59,6 +68,7 @@ elif job == "NIN":
     Huton = NINBuffList.query("Name == 'Huton'").iloc[0,2]
     Trick_Attack = NINBuffList.query("Name == 'Trick Attack'").iloc[0,2]
     Mug = NINBuffList.query("Name == 'Mug'").iloc[0,2]
+    buffs = [Huton, Trick_Attack, Mug]
     pass
 
 elif job == "DRG":
@@ -67,6 +77,7 @@ elif job == "DRG":
     Dragonsight_Self = DRGBuffList.query("Name == 'Dragonsight Self'").iloc[0,2]
     Disembowl = DRGBuffList.query("Name == 'Disembowl'").iloc[0,2]
     Lance_Charge = DRGBuffList.query("Name == 'Lance Charge'").iloc[0,2]
+    buffs = [Battle_Litany, Dragonsight_Self, Disembowl,Lance_Charge]
     pass
 
 elif job == "MNK":
@@ -76,12 +87,14 @@ elif job == "MNK":
     Riddle_of_Fire = MNKBuffList.query("Name == 'Riddle of Fire'").iloc[0,2]
     Riddle_of_Wind = MNKBuffList.query("Name == 'Riddle of Wind'").iloc[0,2]
     Brotherhood = MNKBuffList.query("Name == 'Brotherhood'").iloc[0,2]
+    buffs = [Disciplined_Fists, Greased_Lightning, Riddle_of_Fire,Riddle_of_Wind, Brotherhood]
     pass
 
 elif job == "RPR":
     RPRBuffList = traitBuffList.query("Class == @job")
     Shadow_of_Death = RPRBuffList.query("Name == 'Shadow of death'").iloc[0,2]
     Arcane_Circle = RPRBuffList.query("Name == 'Arcane Circle'").iloc[0,2]
+    buffs = [Shadow_of_Death,Arcane_Circle]
     pass
 
 elif job == "BRD":
@@ -94,10 +107,10 @@ elif job == "BRD":
     Wanderers_Minuet = BRDBuffList.query("Name == 'Wanderers Minuet'").iloc[0,2]
     Armys_Paeon = BRDBuffList.query("Name == 'Armys Paeon'").iloc[0,2]
     Radiant_Finale = BRDBuffList.query("Name == 'Radiant Finale'").iloc[0,2]
-    BRDBuffArray = [Increased_Action_DMG,Raging_Strikes,Battle_Voice,Mages_Ballad,Wanderers_Minuet,Armys_Paeon,Radiant_Finale]
-    print(BRDBuffArray)
+    buffs = [Raging_Strikes,Battle_Voice,Mages_Ballad,Wanderers_Minuet,Armys_Paeon,Radiant_Finale]
     pass
 
+#not needed?
 elif job == "MCH":
     MCHBuff = traitBuffList.query("Class == 'ALL PHY RANGED'").iloc[0,2]
     pass
@@ -108,6 +121,7 @@ elif job == "DNC":
     Dance_Partner = DNCBuffList.query("Name == 'Dance Partner'").iloc[0,2]
     Technical_Finish = DNCBuffList.query("Name == 'Technical Finish'").iloc[0,2]
     Devilment = DNCBuffList.query("Name == 'Devilment'").iloc[0,2]
+    buffs = [Dance_Partner,Technical_Finish,Devilment]    
     pass
 
 elif job == "BLM":
@@ -116,6 +130,7 @@ elif job == "BLM":
     Enochian = BLMBuffList.query("Name == 'Enochian'").iloc[0,2]
     Fire_Aspect = BLMBuffList.query("Name == 'Aspect of Fire 3'").iloc[0,2]
     Leylines = BLMBuffList.query("Name == 'Leylines'").iloc[0,2]
+    buffs = [Enochian,Fire_Aspect,Leylines]
     pass
 
 elif job == "SMN":
@@ -179,6 +194,12 @@ speed = math.floor(130 * (speed - lvlModifier_Sub) / lvlModifier_Div) / 1000
 GCD = 2.5-(2.5*speed)
 #GCD = (2500-2500*speed)/1000
 print("GCD recast:", GCD)
+
+#for i in 
+#    ability_from_dataframe = job_moves.loc[job_moves["Movename"] == ability_name]
+Modified_GCD_speed = GCD-(GCD - (GCD*0.87))
+print("Modified GCD Speed:",Modified_GCD_speed)
+
 player = [job, crit, dhit, speed, GCD]
 
 GCD_Count = 15/GCD
@@ -305,9 +326,20 @@ print(trait_modified_potenciesArray)
 buff_modified_potencies = []
 true_dmg = []
 #This for loop is gonna iterate per dmg instance. It'll need information whether or not the GCD or ability was buffed. For example We can take NIN
-#as an example. It'll
+#as an example - it need to check if the GCD or ability was used under Trick + Mug, or just trick, etc... and adversely Trick Attack itself is always base value so it'll need to account for that.
 for i in trait_modified_potenciesArray:
     print("Trait:", )
+    pass
+
+#actually 2nd idea, I can just ask at what GCD does their buff start in the burst profile.
+slot = int(input("at what GCD does your buff goes out"))
+slot = slot - 1
+
+for i in trait_modified_potenciesArray:
+    
+    if i == slot:
+
+        pass
     pass
 
 """

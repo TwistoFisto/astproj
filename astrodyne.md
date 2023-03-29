@@ -1,5 +1,5 @@
 # Astrodyne and You
-Astrodyne is another factor we should worry about, a situation can occur when you saw a perfect role card, but not the correct seal. A choice will be potentially between completing seals with a suboptimal role card or buffing preferred class with unperfect astrodyne seals as of 6.2 you cannot "Clutch Redraw" which is when you Redraw a card that completes a perfect seal but suboptimal role card in an attempt to get both. While we can meme on AST aDPS contributions etc... one Astrodyne on it's own does not meaningfully contribute to your dmg, a collection of do.
+Astrodyne is another factor we should worry about, a situation can occur when you draw a perfect role card, but not the correct seal. A choice will be potentially between completing seals with a suboptimal role card or buffing preferred class with unperfect astrodyne seals as of 6.2 you cannot "Clutch Redraw" which is when you Redraw a card that completes a perfect seal but suboptimal role card in an attempt to get both. While we can meme on AST aDPS contributions etc... one Astrodyne on it's own does not meaningfully contribute to your dmg, a collection of do.
 <br/><br/>
 
 A few definitions and rules:
